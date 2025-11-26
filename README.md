@@ -34,8 +34,16 @@ DTA 團隊的 SvelteKit 專案樣板，提供標準化的開發環境與最佳�
 ### 使用此樣板建立新專案
 
 ```sh
-pnpm create dta-sveltekit my-app
-cd my-app
+# 方法一：使用 degit 複製樣板
+npx degit fet-3312/dat-sveltekit my-project
+cd my-project
+node setup.js
+pnpm install
+
+# 方法二：直接 clone（包含 git 歷史）
+git clone https://github.com/fet-3312/dat-sveltekit.git my-project
+cd my-project
+node setup.js
 pnpm install
 ```
 
