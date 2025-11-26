@@ -1,11 +1,17 @@
+import fs from 'node:fs'
 import adapter from '@sveltejs/adapter-static'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+
+const nodePkg = JSON.parse(fs.readFileSync(new URL('./package.json', import.meta.url), 'utf-8'))
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		version: {
+			name: `v${nodePkg.version}`
+		},
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
