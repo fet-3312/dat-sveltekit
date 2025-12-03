@@ -14,7 +14,7 @@ description: Creates perfect Conventional Commits, fixes blocked commits, and sp
 
 - 生成格式：`type(scope): description`
 - type：feat / fix / docs / style / refactor / perf / test / chore / ci / build / revert
-- description、body、footer 使用繁體中文
+- **所有 commit 訊息內容（description、body、footer）必須使用繁體中文**
 - 驗證訊息是否通過 commit hook
 - 若被阻擋：找出問題 → 產生修正版 → 詢問是否重新提交
 - 自動判斷是否需拆分 commit 並分組生成訊息
