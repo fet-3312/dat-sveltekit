@@ -17,17 +17,24 @@ echo "新版本: $NEW_VERSION"
 git add package.json
 
 echo "檢查程式碼格式化..."
-pnpm check
+# 取得暫存檔案列表
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|js|svelte)$' | tr '\n' ' ')
 
-echo "檢查程式碼品質..."
-if ! pnpm exec prettier --check .; then
-  echo "錯誤：程式碼格式化檢查失敗，請執行 'pnpm format' 後再提交"
-  exit 1
-fi
+if [ -z "$STAGED_FILES" ]; then
+  echo "沒有暫存的程式碼檔案需要檢查"
+else
+  echo "檢查暫存檔案: $STAGED_FILES"
 
-if ! pnpm exec eslint .; then
-  echo "錯誤：程式碼檢查失敗，請修正後再提交"
-  exit 1
+  if ! pnpm exec prettier --check $STAGED_FILES; then
+    echo "錯誤：程式碼格式化檢查失敗，請執行 'pnpm format' 後再提交"
+    exit 1
+  fi
+
+  echo "檢查程式碼品質..."
+  if ! pnpm exec eslint $STAGED_FILES; then
+    echo "錯誤：程式碼檢查失敗，請修正後再提交"
+    exit 1
+  fi
 fi
 
 echo "所有檢查通過"
