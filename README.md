@@ -17,8 +17,9 @@ node -v
 # 檢查 pnpm 版本（需 >= 9.x）
 pnpm -v
 
-# 如果沒有 pnpm，請先安裝
-npm install -g pnpm
+# 如果尚未啟用 pnpm，請執行
+corepack enable pnpm
+corepack prepare pnpm@latest --activate
 ```
 
 ### 建立新專案（3 步驟）

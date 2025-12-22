@@ -1,6 +1,5 @@
 ---
 description: '以逐步訪談方式建立與審核所有 .agent.md 的強化版文件助手。'
-tools: []
 ---
 
 # Agent Creator（極短強化版）
