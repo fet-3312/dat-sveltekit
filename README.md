@@ -323,19 +323,10 @@ Husky 會在 `git commit` 時自動執行預提交檢查。
 ### 項目文檔
 
 - [Copilot 編碼指南](.github/copilot-instructions.md) — 開發規範和最佳實踐
-- **🤖 [升級自動化](./github/agents/sveltekit-project-upgrade.agent.md)** — **新：Copilot Agent 自動升級任何 SvelteKit 項目**
 - [框架升級流程](.github/TEMPLATE_UPGRADE_PROCESS.md) — 如何升級至最新框架（手動流程）
 - [升級檢查清單](.github/UPGRADE_CHECKLIST.md) — 升級時的驗證步驟
 - [版本歷史](.github/VERSIONS.md) — 框架版本更新記錄
 
-### Copilot Agents
-
-此項目提供以下 Copilot Agents 協助開發：
-
-| Agent | 用途 |
-|-------|------|
-| [sveltekit-project-upgrade.agent.md](.github/agents/sveltekit-project-upgrade.agent.md) | ⭐ **推薦**：自動升級任何 SvelteKit 項目至最新官方框架版本 |
-| [svektekit-update.agent.md](.github/agents/svektekit-update.agent.md) | 升級既有專案至最新 Svelte 5 / SvelteKit 2 基準 |
 
 ### 官方資源
 
