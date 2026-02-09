@@ -114,13 +114,21 @@ function updateReadme(projectName, description) {
 
 /**
  * 建立 .env 檔案
+ * @param {string} basePath 應用基礎路徑
  */
-function createEnvFile() {
+function createEnvFile(basePath = '') {
 	const envExamplePath = path.join(__dirname, '.env.example')
 	const envPath = path.join(__dirname, '.env')
 
-	if (fs.existsSync(envExamplePath) && !fs.existsSync(envPath)) {
-		fs.copyFileSync(envExamplePath, envPath)
+	if (fs.existsSync(envExamplePath)) {
+		let envContent = fs.readFileSync(envExamplePath, 'utf-8')
+
+		// 更新 PUBLIC_BASE_PATH
+		if (basePath) {
+			envContent = envContent.replace(/PUBLIC_BASE_PATH=.*/g, `PUBLIC_BASE_PATH=${basePath}`)
+		}
+
+		fs.writeFileSync(envPath, envContent)
 		log(`已建立 .env`, 'success')
 	}
 }
@@ -179,13 +187,14 @@ async function main() {
 	// 詢問專案資訊
 	const projectName = await prompt('專案名稱', defaultName)
 	const description = await prompt('專案描述', '')
+	const basePathInput = await prompt('應用基礎路徑（例：/my-app，留空表示根路徑）', '')
 
 	console.log()
 
 	// 更新檔案
 	updatePackageJson(projectName, description)
 	updateReadme(projectName, description)
-	createEnvFile()
+	createEnvFile(basePathInput)
 	initGit()
 
 	// 清理樣板檔案

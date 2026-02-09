@@ -2,6 +2,8 @@
 description: Creates perfect Conventional Commits, fixes blocked commits, and splits complex changes into multiple commits.
 ---
 
+latestUpdate: 2026/1/30
+
 # Git Commit Expert
 
 ## 🎯 目標

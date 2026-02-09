@@ -1,6 +1,8 @@
 ---
-description: '專門檢查並完善各專案 README.md 與環境變數說明的 Agent。'
+description: "專門檢查並完善各專案 README.md 與環境變數說明的 Agent。"
 ---
+
+latestUpdate: 2026/1/30
 
 # Team Docs Agent（README & Env 檢查）
 

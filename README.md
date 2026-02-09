@@ -109,6 +109,33 @@ npx degit fet-3312/dat-sveltekit my-project && cd my-project && node setup.js
 
 ---
 
+## 🚀 框架版本
+
+本專案始終保持在**最新的 SvelteKit 和 Svelte 穩定版本**。
+
+**最後更新**：2026-02-09
+
+| 套件       | 版本   | 狀態    |
+| ---------- | ------ | ------- |
+| SvelteKit  | 2.50.2 | ✅ 最新 |
+| Svelte     | 5.50.0 | ✅ 最新 |
+| Vite       | 7.3.1  | ✅ 最新 |
+| TypeScript | 5.9.3  | ✅ 最新 |
+| ESLint     | 10.0.0 | ✅ 最新 |
+| Prettier   | 3.8.1  | ✅ 最新 |
+
+完整的依賴版本清單見 [.github/VERSIONS.md](.github/VERSIONS.md)。
+
+### 升級與維護
+
+- 📖 **升級流程** — [.github/TEMPLATE_UPGRADE_PROCESS.md](.github/TEMPLATE_UPGRADE_PROCESS.md)
+- ✅ **升級檢查清單** — [.github/UPGRADE_CHECKLIST.md](.github/UPGRADE_CHECKLIST.md)
+- 📋 **版本歷史** — [.github/VERSIONS.md](.github/VERSIONS.md)
+
+每次新項目通過 `setup.js` 初始化時，都會自動使用此範本中的最新版本。
+
+---
+
 ## 可用指令
 
 | 指令               | 說明                               |
@@ -258,11 +285,12 @@ pnpm build
 pnpm preview
 ```
 
-預覽伺服器運行於 http://localhost:4173
+預覽伺服器運行於 <http://localhost:4173>
 
 ### 部署注意事項
 
 - ✅ 本專案使用 `adapter-static`，僅產出靜態檔案
+- ✅ 使用 `PUBLIC_BASE_PATH` 環境變數支援子路徑部署
 - ❌ 不支援 Server-Side Rendering (SSR) 或 API Routes
 - 🌐 支援部署至 GitHub Pages、Netlify、Vercel (靜態模式) 等平台
 
@@ -287,6 +315,35 @@ Husky 會在 `git commit` 時自動執行預提交檢查。
 1. 遵循 [Copilot 指引](.github/copilot-instructions.md) 中的開發規範
 2. 確保所有檢查通過後再提交
 3. 撰寫清楚的 commit message
+
+---
+
+## 📚 文檔與資源
+
+### 項目文檔
+
+- [Copilot 編碼指南](.github/copilot-instructions.md) — 開發規範和最佳實踐
+- **🤖 [升級自動化](./github/agents/sveltekit-project-upgrade.agent.md)** — **新：Copilot Agent 自動升級任何 SvelteKit 項目**
+- [框架升級流程](.github/TEMPLATE_UPGRADE_PROCESS.md) — 如何升級至最新框架（手動流程）
+- [升級檢查清單](.github/UPGRADE_CHECKLIST.md) — 升級時的驗證步驟
+- [版本歷史](.github/VERSIONS.md) — 框架版本更新記錄
+
+### Copilot Agents
+
+此項目提供以下 Copilot Agents 協助開發：
+
+| Agent | 用途 |
+|-------|------|
+| [sveltekit-project-upgrade.agent.md](.github/agents/sveltekit-project-upgrade.agent.md) | ⭐ **推薦**：自動升級任何 SvelteKit 項目至最新官方框架版本 |
+| [svektekit-update.agent.md](.github/agents/svektekit-update.agent.md) | 升級既有專案至最新 Svelte 5 / SvelteKit 2 基準 |
+
+### 官方資源
+
+- [SvelteKit 官方文檔](https://svelte.dev/docs/kit)
+- [Svelte 5 Runes 指南](https://svelte.dev/docs/svelte/runes)
+- [Vite 官方文檔](https://vitejs.dev/)
+- [TypeScript 文檔](https://www.typescriptlang.org/docs/)
+- [ESLint 官方文檔](https://eslint.org/)
 
 ---
 
